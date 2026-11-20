@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/Page.astro
 title: "开源"
-description: "李华顺的作品：创建 Native Shell（NSH）、GPUI Kit、huacnlee/cargo 与 Mado，深度参与 GPUI 与 Zed 核心开发，以及 Ruby China、AutoCorrect、GoBackup 和 Rust、Rails 开发工具。"
+description: "JetSquirrel 的开源作品：DuckLocal、CloudBridge、KhonsuGraph、nsh-graph、gpui-graph，Rust 和 Go 编写的可观测性工具，以及关于成都的小网站。"
 ---
 
 <div class="intro compact">
@@ -13,107 +13,91 @@ description: "李华顺的作品：创建 Native Shell（NSH）、GPUI Kit、hua
 <div class="projects">
   <article class="project featured-project">
     <div class="featured-heading">
-      <h2><a href="https://nsh.dev/">Native Shell</a></h2>
-      <a class="featured-stars" href="https://github.com/longbridge/nsh" aria-label="Native Shell on GitHub, 975 stars">☆ 975 stars</a>
-      <p>一次构建，处处原生。</p>
+      <h2><a href="https://ducklocal.app/">DuckLocal</a></h2>
+      <a class="featured-stars" href="https://github.com/JetSquirrel/DuckLocal" aria-label="DuckLocal on GitHub">GitHub ↗</a>
+      <p>在本地文件上直接跑 SQL。</p>
     </div>
     <div class="featured-body">
-      <p class="featured-lead">我目前的重点项目：Native Shell（NSH），一个用 Rust 构建的原生 UI 框架，支持 iOS、Android、macOS、Windows、Linux 与 Web。</p>
-      <p>组件、状态、逻辑和 API 跨平台共享，各平台使用自己的原生视图、文字、输入与交互进行渲染——UIKit、Android View、AppKit、Win32、GTK 4、HTML 或 GPUI——视觉设计则完全由应用掌控。</p>
+      <p class="featured-lead">一个桌面应用，用 DuckDB 直接查询电脑上的 CSV、Parquet、JSON 和 Excel 文件。</p>
+      <p>不需要服务器，不上传，不注册。DuckDB 运行在应用内部，文件不会离开你的电脑。以 Apache-2.0 协议免费开源，使用 Rust 与 GPUI Kit 构建。</p>
       <dl class="featured-capabilities">
-        <div><dt>Rust 与 TSX</dt><dd>整个应用用 Rust 编写，或用 TSX 与 Tailwind 编写界面，也可以两者结合并共享 Rust 组件。</dd></div>
-        <div><dt>随处交付</dt><dd>打包为独立应用和静态网站，或嵌入现有的 iOS、Android、桌面与 GPUI Kit 应用。</dd></div>
-        <div><dt>运行时模块</dt><dd>加载签名的 TSX 包——插件、功能或 AI 生成的界面——运行在宿主配置的沙箱中。</dd></div>
+        <div><dt>本地文件</dt><dd>CSV、Parquet、JSON、Excel、DuckDB 数据库与 S3，原地查询。</dd></div>
+        <div><dt>仪表盘</dt><dd>把图表保存为 <code>.dash</code> 文件，并在图表上留下评论。</dd></div>
+        <div><dt>面向 Agent</dt><dd><code>ducklocal</code> CLI 输出 JSON，可配合 Claude Code、Codex 与 Cursor 使用。</dd></div>
       </dl>
-      <div class="featured-links"><a href="https://nsh.dev/">查看文档 →</a><a href="https://github.com/longbridge/nsh">GitHub 源代码 ↗</a></div>
+      <div class="featured-links"><a href="https://ducklocal.app/">访问网站 →</a><a href="https://github.com/JetSquirrel/DuckLocal">GitHub 源代码 ↗</a></div>
     </div>
   </article>
   <article class="project featured-project">
     <div class="featured-heading">
-      <h2><a href="https://gpui-kit.com/">GPUI Kit</a></h2>
-      <a class="featured-stars" href="https://github.com/longbridge/gpui-kit" aria-label="GPUI Kit on GitHub, 14.2k stars">☆ 14.2k stars</a>
-      <p>用 Rust 构建快速、精致的原生应用。</p>
+      <h2><a href="https://cloudbridge.jetsquirrel.cloud/">CloudBridge</a></h2>
+      <a class="featured-stars" href="https://github.com/JetSquirrel/cloudbridge" aria-label="CloudBridge on GitHub">GitHub ↗</a>
+      <p>所有云和 AI 账单，一处看清。</p>
     </div>
     <div class="featured-body">
-      <p class="featured-lead">自 2024 年起，我创建并维护 GPUI Kit，一个基于 GPUI 的桌面应用框架，前身是 GPUI Component。</p>
-      <p>它涵盖 UI 组件、布局、编辑器和应用开发工具，支持 macOS、Windows 和 Linux。我深度参与 GPUI 核心开发，为框架引入 MSAA 路径抗锯齿、线性渐变、Tab 焦点导航与矢量路径构建，同时在 GPUI Kit 中持续完善应用层能力。</p>
+      <p class="featured-lead">一个本地运行的开源桌面应用，汇总各家云厂商和 AI 服务的账单，看清钱花在哪里。</p>
+      <p>账单保存在本地 DuckDB 文件中，凭证存放在 macOS 钥匙串或 Windows 凭据管理器里。以 MIT 协议免费开源，支持 macOS 与 Windows。</p>
       <dl class="featured-capabilities">
-        <div><dt>界面构建</dt><dd>从 UI 组件、数据表格到 Dock 布局与图表，支持桌面界面的开发。</dd></div>
-        <div><dt>应用开发</dt><dd>提供代码编辑器与应用开发工具，用于构建 Longbridge Pro 等原生应用。</dd></div>
-        <div><dt>插件扩展</dt><dd>通过 GPUI Shell，应用可以支持用 JavaScript 编写的插件和扩展。</dd></div>
+        <div><dt>云与 AI</dt><dd>AWS、Azure、Google Cloud、阿里云、Cloudflare、火山引擎、OpenAI、Anthropic、DeepSeek 与百炼。</dd></div>
+        <div><dt>告警</dt><dd>费用突增或达到预算时提醒你，关闭窗口后常驻菜单栏。</dd></div>
+        <div><dt>洞察</dt><dd>把 Cloudflare 账单拆到每个 bucket、Worker 或 Durable Object，并扫描可节省的开销。</dd></div>
       </dl>
-      <div class="featured-links"><a href="https://gpui-kit.com/">查看文档与组件 →</a><a href="https://github.com/longbridge/gpui-kit">GitHub 源代码 ↗</a></div>
+      <div class="featured-links"><a href="https://cloudbridge.jetsquirrel.cloud/">访问网站 →</a><a href="https://github.com/JetSquirrel/cloudbridge">GitHub 源代码 ↗</a></div>
+    </div>
+  </article>
+  <article class="project featured-project">
+    <div class="featured-heading">
+      <h2><a href="https://khonsugraph.com/">KhonsuGraph</a></h2>
+      <a class="featured-stars" href="https://github.com/JetSquirrel/KhonsuGraph" aria-label="KhonsuGraph on GitHub">GitHub ↗</a>
+      <p>顺着关系，找到证据。</p>
+    </div>
+    <div class="featured-body">
+      <p class="featured-lead">一个开源、本地优先的图调查工作台，为猎手而生。</p>
+      <p>适用于威胁狩猎、攻击路径分析、SRE 依赖梳理与网络研究。基于内嵌 HawDB 图引擎的原生 Rust 应用，数据留在本机。以 Apache-2.0 协议免费开源。</p>
+      <dl class="featured-capabilities">
+        <div><dt>查询</dt><dd>在同一张图上使用 Cypher 与 PostgreSQL 方言 SQL。</dd></div>
+        <div><dt>调查</dt><dd>图画布、路径追踪、PageRank、介数中心性与社区发现，调查过程和证据都能保存。</dd></div>
+        <div><dt>面向 Agent</dt><dd><code>khonsu</code> JSON CLI 与 <code>.dash</code> 仪表盘，人和 AI agent 都能用。</dd></div>
+      </dl>
+      <div class="featured-links"><a href="https://khonsugraph.com/">访问网站 →</a><a href="https://github.com/JetSquirrel/KhonsuGraph">GitHub 源代码 ↗</a></div>
     </div>
   </article>
   <article class="project">
-    <h3><a href="https://huacnlee.github.io/cargo/">huacnlee/cargo</a></h3>
-    <p>可直接替换的 Cargo 分支，专为快速本地构建与可控的磁盘占用优化。同一项目的所有 git worktree 共享一个构建目录，并自动控制在容量上限内——在 525 个 crate 的 NSH 工作区中，5 个 worktree 的构建从 8.5 分钟、33.6 GB 降到 1.6 分钟、5.1 GB。无需任何配置。</p>
-    <p class="project-link"><a href="https://github.com/huacnlee/cargo">GitHub 源代码 ↗</a></p>
+    <h3><a href="https://jetsquirrel.github.io/nsh-graph/">nsh-graph</a></h3>
+    <p>交互式网络图，在每个平台上都是原生的。一个用于 Native Shell 的 TSX 组件，支持力导向、层级、环形与网格布局，平移、缩放与键盘导航，运行在 iOS、Android、桌面与 Web 上。</p>
+    <p class="project-link"><a href="https://github.com/JetSquirrel/nsh-graph">GitHub 源代码 ↗</a></p>
   </article>
   <article class="project">
-    <h3><a href="https://madomd.com/">Mado</a></h3>
-    <p>面向 AI 时代的 macOS 原生 Markdown 应用。AI 写 Markdown，Mado 让它好读：支持文件夹工作区、大纲导航、源码 / 视觉 / 分栏三种模式、轻量编辑，以及 HTML / PDF 导出。使用 Swift 开发。</p>
-    <p class="project-link"><a href="https://madomd.com/">madomd.com ↗</a></p>
+    <h3><a href="https://github.com/JetSquirrel/gpui-graph">gpui-graph</a></h3>
+    <p>基于 GPUI 的力导向网络图组件，支持 Barnes–Hut 模拟、平移缩放、选择与社区聚类。KhonsuGraph 的图视图就是用它做的，也是 nsh-graph 的原型。</p>
+    <p class="project-link"><a href="https://github.com/JetSquirrel/gpui-graph">GitHub 源代码 ↗</a></p>
   </article>
 </div>
 
-## 参与贡献
+## 成都小站
 
-我也把实际项目中的改进贡献给所依赖的工具和框架，从 Rails、GitLab 到 Rust 原生桌面开发。
+写给我喜欢的这座城市。
 
-### [Zed &amp; GPUI](https://github.com/zed-industries/zed) <span class="repo-stars" aria-hidden="true" title="89,985 GitHub stars · 2026-09-09">☆ 90k</span>
+<div class="projects">
+  <article class="project">
+    <h3><a href="https://tantan-map.jetsquirrel.cloud/">谭谈交通地图</a></h3>
+    <p>沿着《谭谈交通》的影像重新认识成都：49 处考证过的取景地标注在地图上，关联哔哩哔哩官方合集 345 期节目。</p>
+    <p class="project-link"><a href="https://tantan-map.jetsquirrel.cloud/">访问网站 ↗</a></p>
+  </article>
+  <article class="project">
+    <h3><a href="https://cd-metro-typing.jetsquirrel.cloud/">成都地铁打字</a></h3>
+    <p>沿着成都，打一站是一站。在真实线网里选一条线路，把中英文站名一站一站敲过去，还能选普通话或四川话到站播报。</p>
+    <p class="project-link"><a href="https://cd-metro-typing.jetsquirrel.cloud/">访问网站 ↗</a></p>
+  </article>
+</div>
 
-自 2024 年 2 月起，我向 Zed 和 GPUI 提交了超过 100 个已合并 PR，工作横跨编辑器、底层渲染框架与原生平台集成。许多改进连接着 Zed 自身的需求，以及我在 Longbridge Pro 和 GPUI Kit 中的开发实践。
+## 可观测性与基础设施
 
-* **图形与渲染。** 通过[矢量路径构建](https://github.com/zed-industries/zed/pull/22808)、[MSAA 抗锯齿](https://github.com/zed-industries/zed/pull/22812)与[路径渲染重构](https://github.com/zed-industries/zed/pull/29718)，为 GPUI 的任意路径绘制奠定基础，支撑自定义矢量图形与各类图表的绘制，同时改善边缘质量、降低显存开销。
-* **文字与排版。** 完善中日韩文字换行、[多行截断](https://github.com/zed-industries/zed/pull/23058)、字体渲染与交互样式，让文字在不同布局和状态下稳定呈现。
-* **交互与性能。** 增加[键盘焦点导航](https://github.com/zed-industries/zed/pull/33008)与激活能力，并[改善视图缓存](https://github.com/zed-industries/zed/pull/25009)，减少滚动和鼠标交互中的不必要渲染。
-* **原生平台与编辑器体验。** 完善 Windows 集成与 macOS 渲染，同时改进 Zed 的主题切换、文件导航和终端任务等日常使用体验。
+* [terraform-provider-nightingale](https://github.com/JetSquirrel/terraform-provider-nightingale) — 用 Terraform 管理夜莺（Nightingale）告警资源。
+* [openclaw_exporter](https://github.com/JetSquirrel/openclaw_exporter) — OpenClaw 的 Prometheus exporter。
 
-近期，我还在推进[原生窗口合成](https://github.com/zed-industries/zed/pull/62379)、[原生子视图之上的 GPUI 浮层](https://github.com/zed-industries/zed/pull/61945)与[玻璃表面渲染](https://github.com/zed-industries/zed/pull/58833)等上游提案，扩展 GPUI 与嵌入式原生内容协同工作的能力。
+## 更多开源
 
-[查看我的全部 Zed PR →](https://github.com/zed-industries/zed/pulls?q=is%3Apr+author%3Ahuacnlee)
+* [kiro-acp](https://github.com/JetSquirrel/kiro-acp) — Kiro CLI 的 ACP（Agent Client Protocol）适配器，让 Zed 等编辑器可以把 Kiro 当作编程助手。
 
-Zed 官方以 **Community Champion Spotlight: Jason Lee** 为题，专文介绍了我对 GPUI 框架及其生态的贡献。
-
-> “… outstanding contributions to `gpui` and the ecosystem around it.”
->
-> — [Zed · 2026 年 4 月](https://zed.dev/blog/community-champion-jason-lee)
-
-* [Ruby on Rails](https://github.com/rails/rails) <span class="repo-stars" aria-hidden="true" title="58,750 GitHub stars · 2026-09-09">☆ 58.8k</span> — 改进 [Active Storage 集成](https://github.com/rails/rails/pull/31854)与 [Redis 缓存行为](https://github.com/rails/rails/pull/33254)。
-* [GitLab](https://github.com/gitlabhq/gitlabhq) <span class="repo-stars" aria-hidden="true" title="24,546 GitHub stars · 2026-09-09">☆ 24.5k</span> — 在维护阿里集团 GitLab 的同时，贡献[配置缓存](https://github.com/gitlabhq/gitlabhq/pull/9825)、[权限判断性能](https://github.com/gitlabhq/gitlabhq/pull/9915)与视图渲染优化。
-* [GORM](https://github.com/go-gorm/gorm) <span class="repo-stars" aria-hidden="true" title="39,950 GitHub stars · 2026-09-09">☆ 40k</span> — 引入[事务块 API `db.Transaction`](https://github.com/go-gorm/gorm/pull/2767) 和用于检查生成 SQL 的 [`ToSQL`](https://github.com/go-gorm/gorm/pull/4787)，并开发了 GORM 分表插件 [gorm-sharding](https://github.com/go-gorm/sharding)。
-* [Pest](https://github.com/pest-parser/pest) <span class="repo-stars" aria-hidden="true" title="5,395 GitHub stars · 2026-09-09">☆ 5.4k</span> — 增加 [Unicode Script 规则](https://github.com/pest-parser/pest/pull/751)、[多语法文件支持](https://github.com/pest-parser/pest/pull/758)，并[优化行列定位性能](https://github.com/pest-parser/pest/pull/785)。
-
-## Omarchy
-
-* [Omamail](https://github.com/huacnlee/omamail) — Omarchy 邮件插件，支持 Gmail、HEY 与 IMAP，将邮件阅读和管理融入桌面。
-* [Omasend](https://github.com/huacnlee/omasend) — 为 Omarchy 打造的原生 LocalSend 客户端，通过局域网发送文件、文件夹和文字。基于 GPUI Kit，支持 Linux、macOS 和 Windows。
-* [Omarchy Mihoro](https://github.com/huacnlee/omarchy-mihoro) — Mihoro 的 Omarchy 状态栏面板，用于查看代理状态、切换 Rule / Global / Direct 模式和管理订阅。
-* [Omarchy ThemeRGB](https://github.com/huacnlee/omarchy-theme-rgb) — 让每一盏灯都跟随主题：把键盘、鼠标、内存、风扇等 OpenRGB 管理的所有设备同步为当前 Omarchy 主题配色，并提供状态栏面板调整配色数量、布局与亮度。
-* [Omarchy WhichKey](https://github.com/huacnlee/omarchy-which-key) — 将 Which Key 体验带到桌面：按住 Super 显示快捷键提示，直接读取当前 Omarchy 与 Hyprland 的实际绑定。
-
-## 更多开源作品
-
-* [AutoCorrect](https://github.com/huacnlee/autocorrect) <span class="repo-stars" aria-hidden="true" title="1,627 GitHub stars · 2026-09-09">☆ 1.6k</span> — 基于 Rust 的文案检查与格式化工具，处理 CJK 与英文混排中的空格、词语和标点。
-* [GoBackup](https://github.com/gobackup/gobackup) <span class="repo-stars" aria-hidden="true" title="2,949 GitHub stars · 2026-09-09">☆ 2.9k</span> — 定时备份数据库和文件到多种云存储的工具。
-* [rust-i18n](https://github.com/longbridge/rust-i18n) <span class="repo-stars" aria-hidden="true" title="665 GitHub stars · 2026-09-09">☆ 0.7k</span> — Rust 应用国际化工具。
-
-## 社区与 Web 应用
-
-* [Ruby China](https://ruby-china.org) — 中文 Ruby 社区，我是联合创始人、管理员和主要开发者。
-* [Homeland](https://github.com/ruby-china/homeland) <span class="repo-stars" aria-hidden="true" title="3,859 GitHub stars · 2026-09-09">☆ 3.9k</span> — 开源社区系统，Ruby China 使用的论坛软件。
-* [BlueDoc](https://github.com/huacnlee/bluedoc) <span class="repo-stars" aria-hidden="true" title="633 GitHub stars · 2026-09-09">☆ 0.6k</span> — 可自行部署的团队文档管理工具。
-* [RubyGems 镜像](https://ruby-china.org/topics/29250) — 从 RubyGems 淘宝镜像到 Ruby China 镜像，持续十多年帮助国内开发者安装依赖的公共服务。
-
-## Rails 工具
-
-* [rails-settings-cached](https://github.com/huacnlee/rails-settings-cached) <span class="repo-stars" aria-hidden="true" title="1,122 GitHub stars · 2026-09-09">☆ 1.1k</span> — Rails 应用全局设置。
-* [action-store](https://github.com/rails-engine/action-store) — 用多态关联统一存储赞、关注、收藏与屏蔽等行为。
-* [notifications](https://github.com/rails-engine/notifications) — Rails 应用站内通知引擎。
-* [audit-log](https://github.com/rails-engine/audit-log) — 用户操作审计日志与查询界面。
-* [rucaptcha](https://github.com/huacnlee/rucaptcha) <span class="repo-stars" aria-hidden="true" title="702 GitHub stars · 2026-09-09">☆ 0.7k</span> — Rails 图形验证码工具。
-* [activestorage-aliyun](https://github.com/huacnlee/activestorage-aliyun) — Active Storage 的阿里云 OSS 支持。
-* [social-share-button](https://github.com/huacnlee/social-share-button) <span class="repo-stars" aria-hidden="true" title="580 GitHub stars · 2026-09-09">☆ 0.6k</span> — Rails 社交分享插件。
-
-[在 GitHub 查看更多项目 →](https://github.com/huacnlee?tab=repositories)
+[GitHub 上的更多项目 →](https://github.com/JetSquirrel?tab=repositories)

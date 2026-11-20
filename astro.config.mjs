@@ -4,9 +4,9 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://huacnlee.com',
+  site: 'https://jetsquirrel.cloud',
   integrations: [react(), sitemap({
-    filter: (page) => ['/', '/work/', '/zh/', '/zh/work/'].includes(new URL(page).pathname),
+    filter: (page) => ['/', '/work/', '/community/', '/zh/', '/zh/work/', '/zh/community/'].includes(new URL(page).pathname),
     i18n: { defaultLocale: 'en', locales: { en: 'en', zh: 'zh-CN' } },
   })],
   vite: { plugins: [tailwindcss()] },

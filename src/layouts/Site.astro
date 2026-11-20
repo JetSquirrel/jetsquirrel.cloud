@@ -9,29 +9,30 @@ const path = Astro.url.pathname;
 const isZh = path === '/zh/' || path.startsWith('/zh/');
 const home = isZh ? '/zh/' : '/';
 const works = isZh ? '/zh/work/' : '/work/';
+const community = isZh ? '/zh/community/' : '/community/';
 const englishPath = isZh ? path.replace(/^\/zh/, '') : path;
 const chinesePath = `/zh${englishPath}`;
-const hasTranslation = ['/', '/work/'].includes(englishPath);
+const hasTranslation = ['/', '/work/', '/community/'].includes(englishPath);
 const canonical = new URL(path, Astro.site);
-const name = isZh ? '李华顺 · Jason Lee' : 'Jason Lee';
+const name = 'JetSquirrel';
 const pageTitle = `${title} — ${name}`;
 const siteUrl = new URL('/', Astro.site).href;
 const personId = `${siteUrl}#person`;
-const markdownPath = path.endsWith('/work/') ? `${path.slice(0, -1)}.md` : `${path}index.md`;
+const markdownPath = englishPath === '/' ? `${path}index.md` : `${path.slice(0, -1)}.md`;
 const socialImage = new URL('/favicon.png', Astro.site);
 const structuredData = {
   '@context': 'https://schema.org',
   '@graph': [
     {
       '@type': 'Person', '@id': personId,
-      name: 'Jason Lee', alternateName: ['李华顺', 'huacnlee'], url: siteUrl,
-      jobTitle: 'Technical VP',
-      worksFor: { '@type': 'Organization', name: 'Longbridge', url: 'https://longbridge.com/' },
-      sameAs: ['https://github.com/huacnlee', 'https://x.com/huacnlee', 'https://ruby-china.org/huacnlee'],
+      name: 'JetSquirrel', url: siteUrl,
+      jobTitle: 'SRE',
+      sameAs: ['https://github.com/JetSquirrel', 'https://x.com/JetSquirrel2048', 'https://medium.com/@jetdeng', 'https://bonjour.bio/jetdeng'],
+      knowsAbout: ['Site Reliability Engineering', 'Observability', 'AI Security', 'AWS', 'GreptimeDB'],
     },
     {
       '@type': 'WebSite', '@id': `${siteUrl}#website`, url: siteUrl,
-      name: 'Jason Lee', inLanguage: ['en', 'zh-CN'], author: { '@id': personId },
+      name: 'JetSquirrel', inLanguage: ['en', 'zh-CN'], author: { '@id': personId },
     },
     {
       '@type': englishPath === '/' ? 'ProfilePage' : 'CollectionPage',
@@ -50,7 +51,7 @@ const structuredData = {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
-    <meta name="author" content="Jason Lee" />
+    <meta name="author" content="JetSquirrel" />
     <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
     {!noindex && <link rel="canonical" href={canonical} />}
     {hasTranslation && <link rel="alternate" type="text/markdown" href={new URL(markdownPath, Astro.site)} />}
@@ -59,25 +60,40 @@ const structuredData = {
       <link rel="alternate" hreflang="zh-CN" href={new URL(chinesePath, Astro.site)} />
       <link rel="alternate" hreflang="x-default" href={new URL(englishPath, Astro.site)} />
     </>}
+    {hasTranslation && <script is:inline define:vars={{ isZh, englishPath, chinesePath }}>
+      // Pick the language by region on first visit; an explicit switch is remembered.
+      if (!/bot|crawl|spider|slurp|preview/i.test(navigator.userAgent)) {
+        let lang = null;
+        try { lang = localStorage.getItem('lang'); } catch {}
+        if (lang !== 'zh' && lang !== 'en') {
+          let tz = '';
+          try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch {}
+          const zhRegion = tz === 'PRC' || /^Asia\/(Shanghai|Chongqing|Chungking|Harbin|Urumqi|Kashgar|Hong_Kong|Macau|Taipei)$/.test(tz);
+          const first = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+          lang = zhRegion || /^zh\b/i.test(first) ? 'zh' : 'en';
+        }
+        if ((lang === 'zh') !== isZh) location.replace((lang === 'zh' ? chinesePath : englishPath) + location.search + location.hash);
+      }
+    </script>}
     <meta property="og:locale" content={isZh ? 'zh_CN' : 'en_US'} />
     {hasTranslation && <meta property="og:locale:alternate" content={isZh ? 'en_US' : 'zh_CN'} />}
-    <link rel="icon" href="/favicon.ico?v=5" sizes="16x16 32x32 48x48" />
-    <link rel="icon" href="/favicon.svg?v=5" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico?v=6" sizes="16x16 32x32 48x48" />
+    <link rel="icon" href="/favicon.svg?v=6" type="image/svg+xml" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Jason Lee" />
+    <meta property="og:site_name" content="JetSquirrel" />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={socialImage} />
     <meta property="og:image:width" content="1024" />
     <meta property="og:image:height" content="1024" />
-    <meta property="og:image:alt" content="Jason Lee — JL monogram" />
+    <meta property="og:image:alt" content="JetSquirrel — J monogram" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:creator" content="@huacnlee" />
+    <meta name="twitter:creator" content="@JetSquirrel2048" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImage} />
-    <meta name="twitter:image:alt" content="Jason Lee — JL monogram" />
+    <meta name="twitter:image:alt" content="JetSquirrel — J monogram" />
     {!noindex && <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData).replace(/</g, '\\u003c')} />}
   </head>
   <body class="min-h-screen bg-background font-mono text-foreground antialiased">
@@ -88,11 +104,12 @@ const structuredData = {
           <div class="nav-pages">
             <a class="nav-link" href={home} aria-current={path === home ? 'page' : undefined}>Profile</a>
             <a class="nav-link" href={works} aria-current={path === works ? 'page' : undefined}>OPEN SOURCE</a>
+            <a class="nav-link" href={community} aria-current={path === community ? 'page' : undefined}>COMMUNITY</a>
           </div>
           <div class="nav-external">
-            <a class="nav-link" href="https://github.com/huacnlee">GitHub</a>
-            <a class="nav-link" href="https://x.com/huacnlee">Twitter</a>
-            {hasTranslation && <a class={buttonVariants({ variant: "ghost", size: "xs" })} href={isZh ? englishPath : chinesePath} lang={isZh ? 'en' : 'zh-CN'} aria-label={isZh ? 'Switch to English' : '切换到中文'}>{isZh ? 'English' : '中文'}</a>}
+            <a class="nav-link" href="https://github.com/JetSquirrel">GitHub</a>
+            <a class="nav-link" href="https://x.com/JetSquirrel2048">Twitter</a>
+            {hasTranslation && <a class={buttonVariants({ variant: "ghost", size: "xs" })} href={isZh ? englishPath : chinesePath} data-lang-switch={isZh ? 'en' : 'zh'} lang={isZh ? 'en' : 'zh-CN'} aria-label={isZh ? 'Switch to English' : '切换到中文'}>{isZh ? 'English' : '中文'}</a>}
           </div>
         </nav>
       </header>
@@ -101,5 +118,10 @@ const structuredData = {
       </main>
     </div>
     <script>import "../scripts/motion";</script>
+    <script is:inline>
+      document.querySelectorAll('[data-lang-switch]').forEach(a => a.addEventListener('click', () => {
+        try { localStorage.setItem('lang', a.dataset.langSwitch); } catch {}
+      }));
+    </script>
   </body>
 </html>

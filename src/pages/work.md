@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/Page.astro
 title: "OPEN SOURCE"
-description: "Jason Lee’s work: creator of Native Shell (NSH), GPUI Kit, huacnlee/cargo and Mado, core contributions to GPUI and Zed, Ruby China, AutoCorrect, GoBackup, Rust and Rails tools."
+description: "JetSquirrel’s open source: DuckLocal, CloudBridge, KhonsuGraph, nsh-graph, gpui-graph, and observability tools in Rust and Go, plus small web projects about Chengdu."
 ---
 
 <div class="intro compact">
@@ -13,107 +13,91 @@ description: "Jason Lee’s work: creator of Native Shell (NSH), GPUI Kit, huacn
 <div class="projects">
   <article class="project featured-project">
     <div class="featured-heading">
-      <h2><a href="https://nsh.dev/">Native Shell</a></h2>
-      <a class="featured-stars" href="https://github.com/longbridge/nsh" aria-label="Native Shell on GitHub, 975 stars">☆ 975 stars</a>
-      <p>Build once, native everywhere.</p>
+      <h2><a href="https://ducklocal.app/">DuckLocal</a></h2>
+      <a class="featured-stars" href="https://github.com/JetSquirrel/DuckLocal" aria-label="DuckLocal on GitHub">GitHub ↗</a>
+      <p>SQL on your local files.</p>
     </div>
     <div class="featured-body">
-      <p class="featured-lead">My current focus: Native Shell (NSH), a native UI framework for iOS, Android, macOS, Windows, Linux, and the web, built in Rust.</p>
-      <p>Components, state, logic, and APIs are shared across platforms, while each platform renders with its own views, text, input, and interaction—UIKit, Android views, AppKit, Win32, GTK 4, HTML, or GPUI—and the app owns its visual design.</p>
+      <p class="featured-lead">A desktop app for querying CSV, Parquet, JSON, and Excel files with DuckDB, right where they sit on your computer.</p>
+      <p>No server, no upload, no account. DuckDB runs inside the app, so your files never leave the machine. Free and open source under Apache-2.0, built in Rust with GPUI Kit.</p>
       <dl class="featured-capabilities">
-        <div><dt>Rust &amp; TSX</dt><dd>Write the whole app in Rust, its screens in TSX with Tailwind, or combine both with shared Rust components.</dd></div>
-        <div><dt>Ship anywhere</dt><dd>Package standalone apps and static websites, or embed NSH in existing iOS, Android, desktop, and GPUI Kit apps.</dd></div>
-        <div><dt>Run-time modules</dt><dd>Load signed TSX packages—plugins, features, or AI-generated UI—inside a sandbox the host configures.</dd></div>
+        <div><dt>Local files</dt><dd>CSV, Parquet, JSON, Excel, DuckDB databases, and S3—queried in place.</dd></div>
+        <div><dt>Dashboards</dt><dd>Save charts as <code>.dash</code> files and leave comments on them.</dd></div>
+        <div><dt>Agent-ready</dt><dd>The <code>ducklocal</code> CLI prints JSON for Claude Code, Codex, and Cursor.</dd></div>
       </dl>
-      <div class="featured-links"><a href="https://nsh.dev/">Explore the docs →</a><a href="https://github.com/longbridge/nsh">Source on GitHub ↗</a></div>
+      <div class="featured-links"><a href="https://ducklocal.app/">Visit the site →</a><a href="https://github.com/JetSquirrel/DuckLocal">Source on GitHub ↗</a></div>
     </div>
   </article>
   <article class="project featured-project">
     <div class="featured-heading">
-      <h2><a href="https://gpui-kit.com/">GPUI Kit</a></h2>
-      <a class="featured-stars" href="https://github.com/longbridge/gpui-kit" aria-label="GPUI Kit on GitHub, 14.2k stars">☆ 14.2k stars</a>
-      <p>Fast, polished native apps in Rust.</p>
+      <h2><a href="https://cloudbridge.jetsquirrel.cloud/">CloudBridge</a></h2>
+      <a class="featured-stars" href="https://github.com/JetSquirrel/cloudbridge" aria-label="CloudBridge on GitHub">GitHub ↗</a>
+      <p>Every cloud and AI bill, in one place.</p>
     </div>
     <div class="featured-body">
-      <p class="featured-lead">Since 2024, I’ve been building and maintaining GPUI Kit, a desktop application framework built on GPUI, formerly known as GPUI Component.</p>
-      <p>It brings UI components, layouts, editors, and application development tools together for macOS, Windows, and Linux. My work on GPUI’s core includes MSAA path anti-aliasing, linear gradients, Tab focus navigation, and vector path construction, alongside the application layer I continue to build in GPUI Kit.</p>
+      <p class="featured-lead">A local, open-source desktop app that collects bills from cloud and AI providers and shows where the money goes.</p>
+      <p>Bills are stored in a local DuckDB file, and credentials stay in the macOS Keychain or Windows Credential Manager. Free under the MIT license, for macOS and Windows.</p>
       <dl class="featured-capabilities">
-        <div><dt>Interfaces</dt><dd>Components, data tables, docking, and charts for building desktop interfaces.</dd></div>
-        <div><dt>Applications</dt><dd>A code editor and application tools, used in native apps such as Longbridge Pro.</dd></div>
-        <div><dt>Extensions</dt><dd>GPUI Shell lets applications support plugins and extensions written in JavaScript.</dd></div>
+        <div><dt>Clouds &amp; AI</dt><dd>AWS, Azure, Google Cloud, Alibaba Cloud, Cloudflare, Volcengine, OpenAI, Anthropic, DeepSeek, and Model Studio.</dd></div>
+        <div><dt>Alerts</dt><dd>Get notified when costs jump or a budget is reached, from the menu bar.</dd></div>
+        <div><dt>Insights</dt><dd>Break Cloudflare bills down to each bucket, Worker, or Durable Object, and scan for savings.</dd></div>
       </dl>
-      <div class="featured-links"><a href="https://gpui-kit.com/">Explore the docs →</a><a href="https://github.com/longbridge/gpui-kit">Source on GitHub ↗</a></div>
+      <div class="featured-links"><a href="https://cloudbridge.jetsquirrel.cloud/">Visit the site →</a><a href="https://github.com/JetSquirrel/cloudbridge">Source on GitHub ↗</a></div>
+    </div>
+  </article>
+  <article class="project featured-project">
+    <div class="featured-heading">
+      <h2><a href="https://khonsugraph.com/">KhonsuGraph</a></h2>
+      <a class="featured-stars" href="https://github.com/JetSquirrel/KhonsuGraph" aria-label="KhonsuGraph on GitHub">GitHub ↗</a>
+      <p>Follow the connections. Uncover the evidence.</p>
+    </div>
+    <div class="featured-body">
+      <p class="featured-lead">An open-source, local-first graph investigation workbench, built for hunters.</p>
+      <p>For threat hunting, attack-path analysis, SRE dependency mapping, and network research. A native Rust app on the embedded HawDB graph engine; data stays on your machine. Free under Apache-2.0.</p>
+      <dl class="featured-capabilities">
+        <div><dt>Query</dt><dd>Cypher and PostgreSQL-dialect SQL over the same graph.</dd></div>
+        <div><dt>Investigate</dt><dd>Graph canvas, path tracing, PageRank, betweenness, and community detection, with saved investigations and evidence.</dd></div>
+        <div><dt>Agent-ready</dt><dd>A <code>khonsu</code> JSON CLI and <code>.dash</code> dashboards for AI agents and people alike.</dd></div>
+      </dl>
+      <div class="featured-links"><a href="https://khonsugraph.com/">Visit the site →</a><a href="https://github.com/JetSquirrel/KhonsuGraph">Source on GitHub ↗</a></div>
     </div>
   </article>
   <article class="project">
-    <h3><a href="https://huacnlee.github.io/cargo/">huacnlee/cargo</a></h3>
-    <p>A drop-in Cargo fork tuned for fast local builds and a bounded disk footprint. Every git worktree of a project shares one build directory that stays under a size limit on its own—on the 525-crate NSH workspace, five worktrees build in 1.6 minutes and 5.1 GB instead of 8.5 minutes and 33.6 GB. Nothing to configure.</p>
-    <p class="project-link"><a href="https://github.com/huacnlee/cargo">Source on GitHub ↗</a></p>
+    <h3><a href="https://jetsquirrel.github.io/nsh-graph/">nsh-graph</a></h3>
+    <p>Interactive network graphs, native on every platform. One TSX component for Native Shell with force, hierarchical, circular, and grid layouts, pan, zoom, and keyboard navigation, on iOS, Android, desktop, and the web.</p>
+    <p class="project-link"><a href="https://github.com/JetSquirrel/nsh-graph">Source on GitHub ↗</a></p>
   </article>
   <article class="project">
-    <h3><a href="https://madomd.com/">Mado</a></h3>
-    <p>A native macOS Markdown app for the AI era. AI writes Markdown; Mado makes it readable—with folder workspaces, outline navigation, Source / Visual / Split modes, lightweight editing, and HTML / PDF export. Built in Swift.</p>
-    <p class="project-link"><a href="https://madomd.com/">madomd.com ↗</a></p>
+    <h3><a href="https://github.com/JetSquirrel/gpui-graph">gpui-graph</a></h3>
+    <p>A force-directed network graph component for GPUI, with Barnes–Hut simulation, pan and zoom, selection, and community clustering. The graph view behind KhonsuGraph and the model for nsh-graph.</p>
+    <p class="project-link"><a href="https://github.com/JetSquirrel/gpui-graph">Source on GitHub ↗</a></p>
   </article>
 </div>
 
-## Contributions
+## Chengdu on the Web
 
-I contribute improvements from real projects back to the tools and frameworks I build on—from Rails and GitLab to Rust desktop software.
+Small sites about the city I love.
 
-### [Zed &amp; GPUI](https://github.com/zed-industries/zed) <span class="repo-stars" aria-hidden="true" title="89,985 GitHub stars · 2026-09-09">☆ 90k</span>
+<div class="projects">
+  <article class="project">
+    <h3><a href="https://tantan-map.jetsquirrel.cloud/">Tan Tan Traffic Map</a></h3>
+    <p>Rediscover Chengdu through <em>Tan Tan Jiao Tong</em>, the traffic-safety show that filmed the city’s streets from 2005. 49 researched filming locations on a map, linked to 345 episodes.</p>
+    <p class="project-link"><a href="https://tantan-map.jetsquirrel.cloud/">Visit site ↗</a></p>
+  </article>
+  <article class="project">
+    <h3><a href="https://cd-metro-typing.jetsquirrel.cloud/">Chengdu Metro Typing</a></h3>
+    <p>Typing practice on the real Chengdu Metro network. Pick one of 17 lines and type the station names one by one in Chinese or English, with Mandarin or Sichuanese announcements.</p>
+    <p class="project-link"><a href="https://cd-metro-typing.jetsquirrel.cloud/">Visit site ↗</a></p>
+  </article>
+</div>
 
-Since February 2024, I’ve contributed more than 100 merged PRs to Zed and GPUI, spanning the editor, its rendering framework, and native platform integration. Much of this work connects the needs of Zed with what I learn building Longbridge Pro and GPUI Kit.
+## Observability &amp; Infrastructure
 
-* **Graphics and rendering.** Helped lay the foundation for arbitrary path drawing in GPUI through [vector path construction](https://github.com/zed-industries/zed/pull/22808), [MSAA anti-aliasing](https://github.com/zed-industries/zed/pull/22812), and [a reworked path renderer](https://github.com/zed-industries/zed/pull/29718). Together, these provide the groundwork for custom vector graphics and chart rendering, with smoother edges and lower GPU memory overhead.
-* **Text and typography.** Improved CJK wrapping, [multi-line truncation](https://github.com/zed-industries/zed/pull/23058), font rendering, and interactive text styles—making text more reliable across layouts and states.
-* **Interaction and performance.** Added [keyboard focus navigation](https://github.com/zed-industries/zed/pull/33008) and activation, and [improved view caching](https://github.com/zed-industries/zed/pull/25009) to reduce unnecessary rendering during scrolling and mouse interaction.
-* **Native platforms and editor experience.** Improved Windows integration and macOS rendering, alongside everyday Zed workflows such as theme switching, file navigation, and terminal tasks.
-
-I’m also developing proposals for [native window composition](https://github.com/zed-industries/zed/pull/62379), [GPUI overlays above native child views](https://github.com/zed-industries/zed/pull/61945), and [glass-surface rendering](https://github.com/zed-industries/zed/pull/58833). These are ongoing upstream proposals, extending how GPUI works with embedded native content.
-
-[Explore all my Zed PRs →](https://github.com/zed-industries/zed/pulls?q=is%3Apr+author%3Ahuacnlee)
-
-Zed featured my work in **Community Champion Spotlight: Jason Lee**, recognizing my contributions to both the framework and its wider ecosystem.
-
-> “… outstanding contributions to `gpui` and the ecosystem around it.”
->
-> — [Zed · April 2026](https://zed.dev/blog/community-champion-jason-lee)
-
-* [Ruby on Rails](https://github.com/rails/rails) <span class="repo-stars" aria-hidden="true" title="58,750 GitHub stars · 2026-09-09">☆ 58.8k</span> — Improved [Active Storage integration](https://github.com/rails/rails/pull/31854) and [Redis caching](https://github.com/rails/rails/pull/33254).
-* [GitLab](https://github.com/gitlabhq/gitlabhq) <span class="repo-stars" aria-hidden="true" title="24,546 GitHub stars · 2026-09-09">☆ 24.5k</span> — Improved [settings caching](https://github.com/gitlabhq/gitlabhq/pull/9825), [permission-check performance](https://github.com/gitlabhq/gitlabhq/pull/9915), and view rendering alongside maintaining Alibaba’s GitLab.
-* [GORM](https://github.com/go-gorm/gorm) <span class="repo-stars" aria-hidden="true" title="39,950 GitHub stars · 2026-09-09">☆ 40k</span> — Introduced the [`db.Transaction` API](https://github.com/go-gorm/gorm/pull/2767) and [`ToSQL`](https://github.com/go-gorm/gorm/pull/4787) for transaction blocks and SQL inspection, and created [gorm-sharding](https://github.com/go-gorm/sharding), a table-sharding plugin for GORM.
-* [Pest](https://github.com/pest-parser/pest) <span class="repo-stars" aria-hidden="true" title="5,395 GitHub stars · 2026-09-09">☆ 5.4k</span> — Added [Unicode Script rules](https://github.com/pest-parser/pest/pull/751), [multiple grammar files](https://github.com/pest-parser/pest/pull/758), and [line-index performance improvements](https://github.com/pest-parser/pest/pull/785).
-
-## Omarchy
-
-* [Omamail](https://github.com/huacnlee/omamail) — A mail plugin for Omarchy with Gmail, HEY, and IMAP support. Read and manage email right from the desktop.
-* [Omasend](https://github.com/huacnlee/omasend) — A native LocalSend client for Omarchy. Share files, folders, and text over your local network. Built with GPUI Kit for Linux, macOS, and Windows.
-* [Omarchy Mihoro](https://github.com/huacnlee/omarchy-mihoro) — An Omarchy bar panel for Mihoro. Monitor your proxy, switch between Rule, Global, and Direct modes, and manage subscriptions.
-* [Omarchy ThemeRGB](https://github.com/huacnlee/omarchy-theme-rgb) — Your theme, on every light. Syncs keyboard, mouse, RAM, fans, and every device OpenRGB manages with the current Omarchy theme colors, with a bar panel for palette, layout, and brightness.
-* [Omarchy WhichKey](https://github.com/huacnlee/omarchy-which-key) — Which Key for the desktop. Hold Super to see a shortcut guide drawn from your active Omarchy and Hyprland keybindings.
+* [terraform-provider-nightingale](https://github.com/JetSquirrel/terraform-provider-nightingale) — A Terraform provider for managing Nightingale alerting resources.
+* [openclaw_exporter](https://github.com/JetSquirrel/openclaw_exporter) — A Prometheus exporter for OpenClaw.
 
 ## More Open Source
 
-* [AutoCorrect](https://github.com/huacnlee/autocorrect) <span class="repo-stars" aria-hidden="true" title="1,627 GitHub stars · 2026-09-09">☆ 1.6k</span> — A Rust linter and formatter for spacing, words, and punctuation in mixed CJK and English text.
-* [GoBackup](https://github.com/gobackup/gobackup) <span class="repo-stars" aria-hidden="true" title="2,949 GitHub stars · 2026-09-09">☆ 2.9k</span> — Scheduled database and file backups to multiple cloud storage providers.
-* [rust-i18n](https://github.com/longbridge/rust-i18n) <span class="repo-stars" aria-hidden="true" title="665 GitHub stars · 2026-09-09">☆ 0.7k</span> — Internationalization for Rust applications.
+* [kiro-acp](https://github.com/JetSquirrel/kiro-acp) — An ACP (Agent Client Protocol) adapter for Kiro CLI, so editors like Zed can use Kiro as a coding assistant.
 
-## Communities &amp; Web Apps
-
-* [Ruby China](https://ruby-china.org) — A Chinese Ruby community. I’m its co-founder, administrator, and a primary developer.
-* [Homeland](https://github.com/ruby-china/homeland) <span class="repo-stars" aria-hidden="true" title="3,859 GitHub stars · 2026-09-09">☆ 3.9k</span> — Open-source community software that powers Ruby China.
-* [BlueDoc](https://github.com/huacnlee/bluedoc) <span class="repo-stars" aria-hidden="true" title="633 GitHub stars · 2026-09-09">☆ 0.6k</span> — Self-hosted document management for teams.
-* [RubyGems Mirror](https://ruby-china.org/topics/29250) — A public service that helped developers in China install Ruby dependencies for more than a decade, from the Taobao mirror to Ruby China.
-
-## Rails Tools
-
-* [rails-settings-cached](https://github.com/huacnlee/rails-settings-cached) <span class="repo-stars" aria-hidden="true" title="1,122 GitHub stars · 2026-09-09">☆ 1.1k</span> — Global settings for Rails applications.
-* [action-store](https://github.com/rails-engine/action-store) — Store likes, follows, bookmarks, and blocks through polymorphic associations.
-* [notifications](https://github.com/rails-engine/notifications) — An in-app notification engine for Rails.
-* [audit-log](https://github.com/rails-engine/audit-log) — User activity logs with a query interface.
-* [rucaptcha](https://github.com/huacnlee/rucaptcha) <span class="repo-stars" aria-hidden="true" title="702 GitHub stars · 2026-09-09">☆ 0.7k</span> — Image captchas for Rails.
-* [activestorage-aliyun](https://github.com/huacnlee/activestorage-aliyun) — Aliyun OSS support for Active Storage.
-* [social-share-button](https://github.com/huacnlee/social-share-button) <span class="repo-stars" aria-hidden="true" title="580 GitHub stars · 2026-09-09">☆ 0.6k</span> — Social sharing buttons for Rails.
-
-[More projects on GitHub →](https://github.com/huacnlee?tab=repositories)
+[More projects on GitHub →](https://github.com/JetSquirrel?tab=repositories)

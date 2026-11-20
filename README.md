@@ -1,6 +1,6 @@
-# huacnlee.com
+# jetsquirrel.cloud
 
-Jason Lee's bilingual profile and open-source portfolio, built with Bun, Astro, Tailwind CSS, and shadcn/ui.
+JetSquirrel's bilingual profile and open-source portfolio, built with Bun, Astro, Tailwind CSS, and shadcn/ui.
 
 ```sh
 bun install
