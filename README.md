@@ -12,4 +12,4 @@ bun run check
 bun run build
 ```
 
-GitHub Actions deploys `main` to GitHub Pages after checks and build pass.
+GitHub Actions runs checks and a build on every push and pull request. Cloudflare Pages deploys `main` (build command `bun run build`, output `dist`).
