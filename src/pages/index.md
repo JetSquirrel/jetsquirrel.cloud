@@ -35,6 +35,10 @@ I lead the observability track of **AWS User Group China** and am an **AWS Commu
 
 [KhonsuGraph](https://khonsugraph.com) is an open-source, local-first graph investigation workbench: Cypher and SQL, path exploration, evidence that cites its source records, and a JSON CLI for AI agents. It’s built for threat hunting, blast-radius analysis, and any question that is really about relationships.
 
+## Native Shell
+
+Lately I’ve been building with [Native Shell](https://nsh.dev): [nsh-o11y](https://jetsquirrel.github.io/nsh-o11y/), observability charts that stay fast at millions of points; [Petal](https://github.com/JetSquirrel/petal), a visual explorer for Neo4j, Neptune, NebulaGraph, and other graph databases; and [Pager](https://github.com/JetSquirrel/pager), an on-call pager running on a Cloudflare Worker that rings every device you own.
+
 ## Community
 
 I help run the observability group of AWS User Group China and build the websites for AWS Community Day China—Summer, Autumn, and Winter 2026.

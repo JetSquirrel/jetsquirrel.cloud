@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/Page.astro
 title: "OPEN SOURCE"
-description: "JetSquirrel’s open source: DuckLocal, CloudBridge, KhonsuGraph, nsh-graph, gpui-graph, and observability tools in Rust and Go, plus small web projects about Chengdu."
+description: "JetSquirrel’s open source: DuckLocal, CloudBridge, KhonsuGraph, the Native Shell apps Petal and Pager, nsh-o11y and nsh-graph, gpui-graph, and observability tools in Rust and Go, plus small web projects about Chengdu."
 ---
 
 <div class="intro compact">
@@ -53,7 +53,7 @@ description: "JetSquirrel’s open source: DuckLocal, CloudBridge, KhonsuGraph, 
     </div>
     <div class="featured-body">
       <p class="featured-lead">An open-source, local-first graph investigation workbench, built for hunters.</p>
-      <p>For threat hunting, attack-path analysis, SRE dependency mapping, and network research. A native Rust app on the embedded HawDB graph engine; data stays on your machine. Free under Apache-2.0.</p>
+      <p>For threat hunting, attack-path analysis, SRE dependency mapping, and network research. A native Rust app on the embedded HawDB graph engine; data stays on your machine. Free under Apache-2.0. Plugins from the <a href="https://github.com/JetSquirrel/khonsugraph-marketplace">KhonsuGraph marketplace</a> bring in PostgreSQL, MySQL, SQLite, and DuckLocal tables as nodes and relationships.</p>
       <dl class="featured-capabilities">
         <div><dt>Query</dt><dd>Cypher and PostgreSQL-dialect SQL over the same graph.</dd></div>
         <div><dt>Investigate</dt><dd>Graph canvas, path tracing, PageRank, betweenness, and community detection, with saved investigations and evidence.</dd></div>
@@ -61,6 +61,28 @@ description: "JetSquirrel’s open source: DuckLocal, CloudBridge, KhonsuGraph, 
       </dl>
       <div class="featured-links"><a href="https://khonsugraph.com/">Visit the site →</a><a href="https://github.com/JetSquirrel/KhonsuGraph">Source on GitHub ↗</a></div>
     </div>
+  </article>
+</div>
+
+## Built with Native Shell
+
+Apps and components in TSX for [Native Shell (NSH)](https://nsh.dev), one codebase for iOS, Android, desktop, and the web—plus gpui-graph, the Rust component nsh-graph grew from.
+
+<div class="projects">
+  <article class="project">
+    <h3><a href="https://jetsquirrel.github.io/nsh-o11y/">nsh-o11y</a></h3>
+    <p>Observability charts for Native Shell. A time-series chart that stays fast at millions of points—min/max pyramids and M4 decimation, live data, shared crosshair and zoom across panels, units, thresholds, and annotations—plus a log view, a trace waterfall, and a flame graph. An optional Rust backend holds hundreds of millions of samples.</p>
+    <p class="project-link"><a href="https://jetsquirrel.github.io/nsh-o11y/">Live demo ↗</a> · <a href="https://github.com/JetSquirrel/nsh-o11y">Source on GitHub ↗</a></p>
+  </article>
+  <article class="project">
+    <h3><a href="https://github.com/JetSquirrel/petal">Petal</a></h3>
+    <p>Explore your graph, one connection at a time. A visual graph explorer in the spirit of Neo4j Bloom for Neo4j, Memgraph, PuppyGraph, TigerGraph, Amazon Neptune, NebulaGraph, Gremlin servers, and HawDB: search with phrases, expand neighbors with a double-click, keep queries in a notebook, and work alongside an assistant over MCP.</p>
+    <p class="project-link"><a href="https://github.com/JetSquirrel/petal">Source on GitHub ↗</a></p>
+  </article>
+  <article class="project">
+    <h3><a href="https://github.com/JetSquirrel/pager">Pager</a></h3>
+    <p>An SRE on-call pager. Alerts from Alertmanager, Grafana, or the PagerDuty Events API v2 open an incident, page whoever is on call on every device, and escalate until someone acknowledges. One Cloudflare Worker and Durable Object on the free plan, an NSH app for every platform, and Tuya sirens and lights for when a phone isn’t enough.</p>
+    <p class="project-link"><a href="https://github.com/JetSquirrel/pager">Source on GitHub ↗</a></p>
   </article>
   <article class="project">
     <h3><a href="https://jetsquirrel.github.io/nsh-graph/">nsh-graph</a></h3>
@@ -94,6 +116,7 @@ Small sites about the city I love.
 ## Observability &amp; Infrastructure
 
 * [terraform-provider-nightingale](https://github.com/JetSquirrel/terraform-provider-nightingale) — A Terraform provider for managing Nightingale alerting resources.
+* [aws-emulator-to-guance](https://github.com/JetSquirrel/aws-emulator-to-guance) — A local order-system lab: S3, DynamoDB, and SQS run on AWS Emulator, OpenTelemetry traces, metrics, and logs flow to Guance through DataKit, and injected faults let you practice going from anomaly to root cause.
 * [openclaw_exporter](https://github.com/JetSquirrel/openclaw_exporter) — A Prometheus exporter for OpenClaw.
 
 ## More Open Source

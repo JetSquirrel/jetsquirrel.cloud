@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/Page.astro
 title: "开源"
-description: "JetSquirrel 的开源作品：DuckLocal、CloudBridge、KhonsuGraph、nsh-graph、gpui-graph，Rust 和 Go 编写的可观测性工具，以及关于成都的小网站。"
+description: "JetSquirrel 的开源作品：DuckLocal、CloudBridge、KhonsuGraph，Native Shell 应用 Petal 与 Pager，nsh-o11y、nsh-graph、gpui-graph，Rust 和 Go 编写的可观测性工具，以及关于成都的小网站。"
 ---
 
 <div class="intro compact">
@@ -53,7 +53,7 @@ description: "JetSquirrel 的开源作品：DuckLocal、CloudBridge、KhonsuGrap
     </div>
     <div class="featured-body">
       <p class="featured-lead">一个开源、本地优先的图调查工作台，为猎手而生。</p>
-      <p>适用于威胁狩猎、攻击路径分析、SRE 依赖梳理与网络研究。基于内嵌 HawDB 图引擎的原生 Rust 应用，数据留在本机。以 Apache-2.0 协议免费开源。</p>
+      <p>适用于威胁狩猎、攻击路径分析、SRE 依赖梳理与网络研究。基于内嵌 HawDB 图引擎的原生 Rust 应用，数据留在本机。以 Apache-2.0 协议免费开源。通过 <a href="https://github.com/JetSquirrel/khonsugraph-marketplace">KhonsuGraph 插件市场</a>，还能把 PostgreSQL、MySQL、SQLite 和 DuckLocal 里的表映射成节点与关系。</p>
       <dl class="featured-capabilities">
         <div><dt>查询</dt><dd>在同一张图上使用 Cypher 与 PostgreSQL 方言 SQL。</dd></div>
         <div><dt>调查</dt><dd>图画布、路径追踪、PageRank、介数中心性与社区发现，调查过程和证据都能保存。</dd></div>
@@ -61,6 +61,28 @@ description: "JetSquirrel 的开源作品：DuckLocal、CloudBridge、KhonsuGrap
       </dl>
       <div class="featured-links"><a href="https://khonsugraph.com/">访问网站 →</a><a href="https://github.com/JetSquirrel/KhonsuGraph">GitHub 源代码 ↗</a></div>
     </div>
+  </article>
+</div>
+
+## 用 Native Shell 构建
+
+为 [Native Shell（NSH）](https://nsh.dev) 编写的 TSX 应用与组件，一套代码运行在 iOS、Android、桌面和 Web 上；最后的 gpui-graph 是 nsh-graph 的 Rust 前身。
+
+<div class="projects">
+  <article class="project">
+    <h3><a href="https://jetsquirrel.github.io/nsh-o11y/">nsh-o11y</a></h3>
+    <p>Native Shell 的可观测性图表。核心是在百万级数据点下依然流畅的时序图：min/max 金字塔加 M4 降采样、实时数据、多面板共享十字线与缩放、单位、阈值与标注；另有日志视图、链路瀑布图和火焰图。可选的 Rust 后端能装下数亿个样本。</p>
+    <p class="project-link"><a href="https://jetsquirrel.github.io/nsh-o11y/">在线演示 ↗</a> · <a href="https://github.com/JetSquirrel/nsh-o11y">GitHub 源代码 ↗</a></p>
+  </article>
+  <article class="project">
+    <h3><a href="https://github.com/JetSquirrel/petal">Petal</a></h3>
+    <p>一次一条关系，探索你的图。类似 Neo4j Bloom 的可视化图浏览器，支持 Neo4j、Memgraph、PuppyGraph、TigerGraph、Amazon Neptune、NebulaGraph、Gremlin 服务和 HawDB：用短语搜索，双击展开邻居，查询保存在笔记本里，还能通过 MCP 和 AI 助手一起分析。</p>
+    <p class="project-link"><a href="https://github.com/JetSquirrel/petal">GitHub 源代码 ↗</a></p>
+  </article>
+  <article class="project">
+    <h3><a href="https://github.com/JetSquirrel/pager">Pager</a></h3>
+    <p>给 SRE 用的值班呼叫器。接收 Alertmanager、Grafana 或 PagerDuty Events API v2 的告警，创建事件，在值班人的每台设备上呼叫，没人确认就逐级升级。云端是免费套餐上的一个 Cloudflare Worker 加 Durable Object，客户端是覆盖全平台的 NSH 应用，手机叫不醒时还有涂鸦警报器和灯。</p>
+    <p class="project-link"><a href="https://github.com/JetSquirrel/pager">GitHub 源代码 ↗</a></p>
   </article>
   <article class="project">
     <h3><a href="https://jetsquirrel.github.io/nsh-graph/">nsh-graph</a></h3>
@@ -94,6 +116,7 @@ description: "JetSquirrel 的开源作品：DuckLocal、CloudBridge、KhonsuGrap
 ## 可观测性与基础设施
 
 * [terraform-provider-nightingale](https://github.com/JetSquirrel/terraform-provider-nightingale) — 用 Terraform 管理夜莺（Nightingale）告警资源。
+* [aws-emulator-to-guance](https://github.com/JetSquirrel/aws-emulator-to-guance) — 本地订单实验室：S3、DynamoDB、SQS 由 AWS Emulator 在本机模拟，OpenTelemetry 链路、指标和日志经 DataKit 送进观测云，按比例注入故障，练习“从异常到根因”。
 * [openclaw_exporter](https://github.com/JetSquirrel/openclaw_exporter) — OpenClaw 的 Prometheus exporter。
 
 ## 更多开源

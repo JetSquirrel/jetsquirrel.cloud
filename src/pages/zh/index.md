@@ -35,6 +35,10 @@ description: "JetSquirrel，SRE，AWS User Group China 可观测 UGL、GreptimeD
 
 [KhonsuGraph](https://khonsugraph.com) 是一个开源、本地优先的图调查工作台：支持 Cypher 与 SQL、路径探索、可追溯到原始记录的证据，以及面向 AI agent 的 JSON CLI。适合威胁狩猎、影响面分析，以及一切本质上是“关系”的问题。
 
+## Native Shell
+
+最近我在用 [Native Shell](https://nsh.dev) 做东西：[nsh-o11y](https://jetsquirrel.github.io/nsh-o11y/)，百万级数据点依然流畅的可观测性图表；[Petal](https://github.com/JetSquirrel/petal)，面向 Neo4j、Neptune、NebulaGraph 等图数据库的可视化浏览器；以及 [Pager](https://github.com/JetSquirrel/pager)，跑在 Cloudflare Worker 上、能把你所有设备都叫响的值班呼叫器。
+
 ## 社区
 
 我参与运营 AWS User Group China 的可观测性小组，并为 2026 年亚马逊云科技 Community Day 的夏季、秋季、冬季三站搭建了官网。
